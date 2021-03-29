@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/user_login.css">
+    <title>Login</title>
+</head>
+    
+<body>
+    <h2>
+        {% if logout %}
+            {{logout}}
+        {% endif%}
+    </h2>
+    <fieldset>
+        <legend>Login</legend>
+        <strong>
+            {% if user_dn_exist %}
+                {{user_dn_exist}}
+            {% endif%}
+        </strong>
+        <strong>
+            {% if user_password_dn_match %}
+                {{user_password_dn_match}}
+            {% endif%}
+        </strong>
+        <form method="post" action='login'>
+                {%csrf_token%}
+                {{login_form.as_p}}
+           <input type="submit" value="login" class="login">     
+        </form>
+        <P class="create-ac"><a href="{% url 'user-register' %}">Create Account</a></P>
+    </fieldset>
+    <script type="text/javascript">
+        // document.querySelector('#id_username').focus();
+    </script>
+</body>
+</html>

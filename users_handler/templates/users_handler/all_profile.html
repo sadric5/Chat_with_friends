@@ -1,0 +1,20 @@
+{% extends 'chat_app/base.html' %}
+
+{%block nav_bar%}
+    {% include 'chat_app/nav_bar.html' %}
+{% endblock%}
+
+        <!-- profile -->
+<!-- ============================================== -->
+{% block profile%}
+    <main>
+        {% for user in allUserAvailable%}
+            <a href="{% url 'chatUsers' user %}" class="userDisplay">
+                <div class="userProfile">
+                    <strong>{{user}}</strong>
+                </div>
+            </a>
+        {%endfor%}
+    </main>
+    
+{% endblock%}

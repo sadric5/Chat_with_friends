@@ -1,0 +1,39 @@
+
+<!-- { % load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="xwidth=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="static/register_user.css">
+
+	<title>Register_page</title>
+</head>
+<body>
+	<form method="post" action="">
+		{% csrf_token %}
+		<fieldset>
+				<legend>Create Account</legend>
+					{% for fields in register_form%}
+				<div class="fields">
+						{{fields.label_tag}}
+						{{fields}}
+						<!-- {% if fields.help_text%}
+							<P class="helptext">{{fields.help_text}}</P>
+						{% endif%} -->
+						{% if fields.errors%}
+							{% for er in fields.errors %}
+							<P class="helptext">{{er}}</P>
+							{% endfor%}
+						{% endif%}
+				</div>
+					{% endfor%}
+
+				<input type="submit" value="create" class="submit-buttom">
+				<P>Already have acount? <a href="{% url 'login-to-home' %}">Login</a></P>
+		</fieldset>
+	</form>
+	
+</body>
+</html>
+
