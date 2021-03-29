@@ -1,0 +1,53 @@
+.helptext{
+	color: blue;
+}
+
+/*div{
+	margin: 50%;
+}*/
+
+fieldset{
+	margin: 35%;
+	margin-top: 15%;
+	width: 400px;
+	height: auto;
+	border-radius: 15px;
+	background-color: #79AF97;
+	border: 4px solid #D6E4FF;
+	/*border:none;*/
+
+}
+.fields{
+	margin: 10px;
+
+}
+#id_username, #id_password1, #id_password2{
+	overflow: hidden;
+	outline: none;
+	padding: 5px;
+	margin: 5px;
+	display: run-in;
+	/*display:!important;*/
+	border-radius: 10px;
+	border-color: #E4FCD6;
+	box-shadow: solid;
+	border: 2px solid;
+
+}
+#id_username{
+	margin-left: 90px;
+}
+
+#id_password1{
+	margin-left: 90px;
+}
+
+.submit-buttom{
+	width: 80px;
+	margin-left: 200px;
+}
+
+body{
+	background-color: #96C4C2;
+}
+
