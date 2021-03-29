@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/home.css">
+    <title>Welcome to DricoKing Corporation</title>
+</head>
+<body>
+    <header>
+        {% block nav_bar%} {%endblock%}
+
+    </header>
+
+    {% block chat%}{%endblock%} 
+
+    {% block profile%}{% endblock%}
+
+    {% block chats%}
+    {%endblock%}
+    
+    {%block writter_bar%}
+    {%endblock%}
+
+    <footer>
+        <div class="foot" >Copyright &copy 2021</div>
+    </footer> 
+    {% block scripts%}  
+    {% endblock%} 
+    <script type="text/javascript">
+    </script> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,150 @@
+
+
+/*=================nav bar css=========================*/
+nav {
+    background-color : rgb(15,130,205);
+    padding-bottom: 15px;
+    padding-top : 15px;
+    margin-top : -10px;
+    margin-left : -10px;
+    margin-right : -10px;
+    border-radius: 5px;
+    position: sticky;
+}
+
+nav a:hover {
+    color: grey;
+    font-family: bold;
+    font-size: 15px;
+    background-color: green;
+    border-radius: 5px;
+    outline: 5px groove grey;
+    outline-offset: 2px;
+}
+
+nav li {
+    display: inline;
+    margin: 20px;
+    padding: 25px;
+    margin-left: 10;
+}
+
+        
+/*=================body css===============*/
+body{
+    background: #CCFAFE;
+}
+
+
+/*===============message form===============*/
+
+#welcome{
+    text-align: center;
+    color: #105706
+}
+
+label{
+    margin-left:61%;
+    color: red;
+}
+
+
+.message-div{
+    width: 400px;
+    background-color: red;
+}
+.message-send{
+    color: blue;
+    background-color: #99F2FF;
+    border-radius: 6px;
+    border-color: #D6E4FF;
+    margin-left:-8px;
+    outline: none;
+   
+}
+
+#id_my_messages{
+    border-radius: 20px;
+    width:500px;
+    height: 60px;
+    overflow: hidden;
+    margin: 2px;
+    padding-left: 5px;
+    margin-bottom: -5px;
+    margin-left: 60%;
+    background-color: #6690FF;
+    border-color: #FFF6CC;
+    outline: none;
+    resize: none;
+    display:!important;
+
+}
+.position-user{
+    margin-left: 30%;
+    margin-bottom: 89px;
+    font-style: italic;
+}
+.position-user-message{
+    margin-left: 61%;
+    padding-bottom: 0px;
+    margin-bottom: -5px;
+    color: red;
+}
+
+.message-positon{
+    color: blue;
+    background-color: #C4F675;
+    margin-left: 30%;
+    margin-right: 200px;
+    margin-top: 0px;
+    padding: 10px;
+    text-align: left;
+    font-family: gorgia;
+   /* width:100px;*/
+    height: auto;
+    /*word-wrap: outline-offset;*/
+    border: 5px solid #E1FDD8;
+    border-radius: 20px;
+    padding-left: 20px;
+
+}
+
+
+.time-position{
+    margin-left: 550px;
+}
+
+/*============footer css================*/
+.foot {
+    background-color: #C5D6FF;
+    text-align: center;
+    min-width: auto;
+    position: relative;
+}
+
+/*===============user profile====================*/
+.userProfile{
+    display: inline-block;
+    background-color: #DFFBAA;
+    margin: 100px;
+    padding: 50px;
+}
+
+.userDisplay{
+    display: inline-block;
+}
+
+main{
+    /*display: inline-block;*/
+}
+
+#id_my_messages{
+    display: hidden;
+}
+
+
+
+
+
+
+

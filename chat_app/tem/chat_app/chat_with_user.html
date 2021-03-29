@@ -1,0 +1,94 @@
+
+{% extends 'chat_app/base.html' %}
+
+
+{%block nav_bar%}
+    {% include 'chat_app/nav_bar.html' %}
+{%endblock%}
+
+{%block chats%}
+    <h1 id="welcome">CHAT WITH <em style="color: red">{{username|add:' your'|title|truncatewords:1|add:'!'}}</em></h1>
+
+    {% for item in all_message%}
+        <div class="data-base-message" id="message-div">
+                <strong class="position-user" id="new-message-aut">{{item.author}}</strong>
+                <p class="message-positon" id="new-message">
+                     {{ item.message|linebreaksbr}}
+                     <br>
+                     <strong class="time-position">{{item.time_message}}</strong>
+                </p>  
+        </div>
+    {% endfor%}
+
+{% endblock%}
+
+{%block writter_bar%} 
+	<div id="the-message-dashbord"></div>
+    <div class="message-div2">
+    	<P class='position-user-message' id='usern' >{{user}}</P>
+    	<textarea name="my_messages" cols="40" rows="10" id="id_my_messages"></textarea>
+    	<input type="submit" value="send" class="message-send" id="submitiom" autofocus>
+    </div>
+{%endblock%}
+
+{% block scripts%} 
+
+{{ username|json_script:"room-name" }}
+
+
+<script type="text/javascript">
+	// document.querySelector('#id_my_messages').focus();
+
+	var protocl=window.location.protocol
+	var protocol_use = protocl=="https:"?"wss":"ws";
+	var username = JSON.parse(document.getElementById('room-name').textContent);
+	const chat_socket = new WebSocket(
+		protocol_use
+		+ "://"
+		+ window.location.host
+		+ ":8989"
+		+ '/wss/chat/'
+		+ username
+		+ '/'
+		)
+
+	p_element = document.createElement('div');
+	p_element.id = 'message-div';
+	
+		chat_socket.onmessage = function(e){
+			document.querySelector('#the-message-dashbord').appendChild(p_element);
+			
+				message_to_socket = JSON.parse(e.data);
+				if (message_to_socket['message']!='')
+				{	//avoid sending empty string to the chat room.
+					message_receive = message_to_socket['message'];
+					user = message_to_socket['user'];
+					time = message_to_socket['time']
+					p_element.innerHTML += "<strong class='position-user' id='new-message-aut'>" + user + "</strong>" +
+					"<p class='message-positon' id='new-message'>" + message_receive + "<br> <strong class='time-position'> " + 
+					time + "</strong></p>";
+
+				}	
+					};
+	
+	chat_socket.onclose = function(e){
+		console.error('chat socket closed unexpected');
+	};
+	// take the message
+	document.querySelector('#submitiom').onclick  = function(e){
+		const message_send = document.querySelector('#id_my_messages');
+		const $message_send = message_send.value;
+		user = document.querySelector('#usern').textContent;
+
+		//chat_socket.onopen = () =>chat_socket.send(JSON.stringify({
+		chat_socket.send(JSON.stringify({
+			'message': $message_send,
+			'user':user,
+			'time': 'lol',
+		}));
+		// alert(message_send);
+		message_send.value = '';
+	};
+</script>
+
+{% endblock%} 
