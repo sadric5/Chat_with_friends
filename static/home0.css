@@ -1,0 +1,17 @@
+body{
+	background:url("learninAsfamilly.jpeg");
+}
+
+#hi, #id_password{
+	color: white;
+}
+
+/*====================footer======================*/
+
+/*============footer css================*/
+.foot {
+    background-color: #C5D6FF;
+    text-align: center;
+    min-width: auto;
+    position: relative;
+}
