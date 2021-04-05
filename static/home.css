@@ -1,35 +1,31 @@
+/*==================login css ==========================*/
+strong{
+    color: #ef0909;
+}
 
+fieldset{
+    margin: 35%;
+    margin-top: 15%;
+    background-color: #79AF97;
+}
 
-/*=================nav bar css=========================*/
-nav {
-    background-color : rgb(15,130,205);
-    padding-bottom: 15px;
-    padding-top : 15px;
-    margin-top : -10px;
-    margin-left : -10px;
-    margin-right : -10px;
+#id_password, #id_username{
+    outline: none;
     border-radius: 5px;
-    position: sticky;
+    padding: 5px;
+    margin: 10px;
 }
 
-nav a:hover {
-    color: grey;
-    font-family: bold;
-    font-size: 15px;
-    background-color: green;
-    border-radius: 5px;
-    outline: 5px groove grey;
-    outline-offset: 2px;
+.create-ac{
+    margin-left: 25%;
 }
 
-nav li {
-    display: inline;
-    margin: 20px;
-    padding: 25px;
-    margin-left: 10;
+.login{
+    margin-left:190px;
+    background-color: #ECFDD7;
 }
 
-        
+
 /*=================body css===============*/
 body{
     background: #CCFAFE;
