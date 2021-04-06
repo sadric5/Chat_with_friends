@@ -1,15 +1,10 @@
 
-<!-- { % load static %} -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="xwidth=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="static/register_user.css">
+{ % load static %}
 
-	<title>Register_page</title>
-</head>
-<body>
+{% extends 'chat_app/base.html'%}
+
+
+{% block register%}
 	<form method="post" action="">
 		{% csrf_token %}
 		<fieldset>
@@ -33,7 +28,18 @@
 				<P>Already have acount? <a href="{% url 'login-to-home' %}">Login</a></P>
 		</fieldset>
 	</form>
-	
-</body>
-</html>
+{% endblock%}
 
+{% block scripts%}  
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+                // $('.navbar-brand').addClass('sadric');
+                // alert($(".sadric").text());
+                // $('.navbar-brand').addClass('sadric');// it's working :reload the page and inpect not view the page 'because it won't be available by viewing 
+
+            });
+            
+        </script>
+{% endblock%} 
