@@ -1,3 +1,62 @@
+
+
+
+{% extends 'chat_app/base.html'%}
+
+{% block css_1%}
+        <link rel="stylesheet" type="text/css" href="/static/home0.css">
+{% endblock%}
+
+{% block login%} 
+    <h2>
+        {% if logout %}
+            {{logout}}
+        {% endif%}
+    </h2>
+    <fieldset>
+        <legend>Login</legend>
+        <strong>
+            {% if user_dn_exist %}
+                {{user_dn_exist}}
+            {% endif%}
+        </strong>
+        <strong>
+            {% if user_password_dn_match %}
+                {{user_password_dn_match}}
+            {% endif%}
+        </strong>
+        <form method="post" action='login'>
+                {%csrf_token%}
+                {{login_form.as_p}}
+           <input type="submit" value="login" class="login">     
+        </form>
+        <P class="create-ac"><a href="{% url 'user-register' %}">Create Account</a></P>
+    </fieldset>
+{% endblock%}
+
+{% block scripts%}  
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+                $('#id_username').addClass('sadric');
+                
+                $('label').attr("id", "hi");
+
+                $('label').addClass("col-sm-2 col-form-label");
+                $('input').addClass("form-control col-md-5");
+
+                // alert($(".sadric").text());
+                // $('.navbar-brand').addClass('sadric');// it's working :reload the page and inpect not view the page 'because it won't be available by viewing 
+            });
+            
+        </script>
+{% endblock%} 
+
+
+
+
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,4 +95,4 @@
         // document.querySelector('#id_username').focus();
     </script>
 </body>
-</html>
+</html> -->
