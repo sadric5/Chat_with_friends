@@ -11,22 +11,42 @@
             {{logout}}
         {% endif%}
     </h2>
+    <div class="mar-b">
     <fieldset>
-        <legend>Login</legend>
-        <strong>
+        <legend text-info>Login</legend>
+        <strong class="text-info">
             {% if user_dn_exist %}
                 {{user_dn_exist}}
             {% endif%}
         </strong>
-        <strong>
+        <strong class="text-info">
             {% if user_password_dn_match %}
                 {{user_password_dn_match}}
             {% endif%}
         </strong>
         <form method="post" action='login'>
-                {%csrf_token%}
-                {{login_form.as_p}}
-           <input type="submit" value="login" class="login">     
+        <div class="container-fluid">
+            {%csrf_token%}
+        {% for field in login_form%}
+        
+            <div class="row gx-4 container-fluid">
+                {{ field.errors }}
+                <div class="col-sm-2">
+                    {{ field.label_tag }}
+                </div>
+                <div class="col-sm-4 input-group">
+                    {{ field }}
+                </div>
+                {% if field.help_text %}
+                    <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+        
+        <div class="container-fluid login-bottom-m">
+            <input type="submit" value="login" class="login">
+        </div>  
+        </div> 
         </form>
         <P class="create-ac"><a href="{% url 'user-register' %}">Create Account</a></P>
     </fieldset>
@@ -42,7 +62,9 @@
                 $('label').attr("id", "hi");
 
                 $('label').addClass("col-sm-2 col-form-label");
-                $('input').addClass("form-control col-md-5");
+                $('input').addClass("form-control-plaintext bg-light m-2");
+                 $('.login').addClass("col-sm-2");
+                 
 
                 // alert($(".sadric").text());
                 // $('.navbar-brand').addClass('sadric');// it's working :reload the page and inpect not view the page 'because it won't be available by viewing 
@@ -50,47 +72,3 @@
             
         </script>
 {% endblock%} 
-
-
-
-
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/static/user_login.css">
-    <title>Login</title>
-</head>
-    
-<body>
-    <h2>
-        {% if logout %}
-            {{logout}}
-        {% endif%}
-    </h2>
-    <fieldset>
-        <legend>Login</legend>
-        <strong>
-            {% if user_dn_exist %}
-                {{user_dn_exist}}
-            {% endif%}
-        </strong>
-        <strong>
-            {% if user_password_dn_match %}
-                {{user_password_dn_match}}
-            {% endif%}
-        </strong>
-        <form method="post" action='login'>
-                {%csrf_token%}
-                {{login_form.as_p}}
-           <input type="submit" value="login" class="login">     
-        </form>
-        <P class="create-ac"><a href="{% url 'user-register' %}">Create Account</a></P>
-    </fieldset>
-    <script type="text/javascript">
-        // document.querySelector('#id_username').focus();
-    </script>
-</body>
-</html> -->
