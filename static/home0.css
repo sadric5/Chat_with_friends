@@ -34,25 +34,30 @@ legend{
 	color: white;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 750px) {
+
   #id_username, #id_password, #hi{
-    width: 100%!important;
-  }
-  body{
-  	background-size: 500px;
+    width: 90%!important;
+    margin:5px!important;
   }
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 600px) {
   fieldset{
-  	width: 40%!important;
+
   	margin-left: 25%!important;
+  	width: 400px!important;
   }
+
+ #id_username, #id_password{
+	width: 60%;
+}
+
 }
 
 
 #hi, #id_username, #id_password{
-	width: 150px;
+	width: 100%;
 }
 
 #id_password{
@@ -64,7 +69,7 @@ fieldset{
 	border-radius: 10px;
 	border: solid #254EDB 1px;
 	background:#361D6E;
-	width: 90%;
+	width: 100%;
 
 }
 
