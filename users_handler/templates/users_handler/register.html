@@ -1,31 +1,41 @@
 
+<!-- { % load static %} -->
+
 {% extends 'chat_app/base.html'%}
 
+{% block css_1%}
+        <link rel="stylesheet" type="text/css" href="/static/home1.css">
+{% endblock%}
 
 {% block register%}
+<div class="container-fluid form-class text-center  form-color">
 	<form method="post" action="">
 		{% csrf_token %}
 		<fieldset>
 				<legend>Create Account</legend>
-					{% for fields in register_form%}
-				<div class="fields">
-						{{fields.label_tag}}
-						{{fields}}
-						<!-- {% if fields.help_text%}
-							<P class="helptext">{{fields.help_text}}</P>
-						{% endif%} -->
-						{% if fields.errors%}
-							{% for er in fields.errors %}
-							<P class="helptext">{{er}}</P>
-							{% endfor%}
-						{% endif%}
+				<div class="container-fluid form-field">
+						{% for fields in register_form%}
+					<div class="row my-3">
+						<div class="col-lg-3 mx-1">
+							{{fields.label_tag}}
+						</div>
+						<div class="col-lg-3 ">
+							{{fields}}
+						</div>
+							{% if fields.errors%}
+								{% for er in fields.errors %}
+								<P class="helptext">{{er}}</P>
+								{% endfor%}
+							{% endif%}
+					</div>
+						{% endfor%}
 				</div>
-					{% endfor%}
 
-				<input type="submit" value="create" class="submit-buttom">
-				<P>Already have acount? <a href="{% url 'login-to-home' %}">Login</a></P>
+					<input type="submit" value="create" class="submit-buttom">
+					<P>Already have acount? <a href="{% url 'login-to-home' %}">Login</a></P>
 		</fieldset>
 	</form>
+</div>
 {% endblock%}
 
 {% block scripts%}  

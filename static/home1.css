@@ -1,0 +1,27 @@
+body{
+	background-image: url("alwaystogether1.jpeg");
+}
+
+.form-color{
+	background:#D6E4FF;
+	opacity: 80%;
+}
+
+
+.form-class{
+	margin-top: 20%;
+}
+
+@media screen and (min-width: 992px){
+	.form-field{
+	padding-left: 30%!important;
+}
+}
+
+
+.foot {
+    background-color: #C5D6FF;
+    text-align: center;
+    min-width: auto;
+    position: relative;
+}
