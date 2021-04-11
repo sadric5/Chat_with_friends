@@ -90,24 +90,22 @@ WSGI_APPLICATION = 'chat_room.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': os.getenv('name'),
-#         'USER':os.getenv('use'),
-#         "PORT":os.getenv('port'),
-#         'HOST':os.getenv('host'),
-#         'PASSWORD':os.getenv('password')
-#     }
-
-
-# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME':  config.get('DATABASE_NAME'),
+         'USER': config.get('USER'),
+         "PORT": config.get('PORT'),
+         'HOST': config.get('DATABASE_HOST'),
+         'PASSWORD': config.get('PASSWORD'),
+     }
+ }
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.sqlite3',
+   #     'NAME': BASE_DIR / 'db.sqlite3',
+    #}
+#}
 
 
 # Password validation

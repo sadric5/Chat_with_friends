@@ -1,7 +1,12 @@
 body{
-	background-image: url("alwaystogether1.jpeg");
+	background-image: url("code1.jpeg");
 }
 
+@media screen and (min-width: 992px){
+	body{
+	background-image: url("code1.jpeg");
+}
+}
 .form-color{
 	background:#D6E4FF;
 	opacity: 80%;
