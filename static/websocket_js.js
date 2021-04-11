@@ -1,11 +1,19 @@
+
 var username = JSON.parse(document.getElementById('room-name').textContent);
-	const chat_socket = new WebSocket(
-		'ws://'
+		
+var protocl=window.location.protocol
+var protocol_use = protocl=="https:"?"wss":"ws";
+
+const chat_socket = new WebSocket(
+		protocol_use
+		+ "://"
 		+ window.location.host
-		+ '/ws/chat/'
+		+ ":8989"
+		+ '/wss/chat/'
 		+ username
 		+ '/'
-		)
+	)
+
 
 	message_section = $(".message-container");
 	p_element = document.createElement('div');
