@@ -1,12 +1,14 @@
+
 body{
-	background-image: url("code1.jpeg");
+	background-image: url("alwaysTogether.jpeg");
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 400px){
 	body{
-	background-image: url("code1.jpeg");
+	background-image: url("alwaysTogether1.jpeg");
 }
 }
+
 .form-color{
 	background:#D6E4FF;
 	opacity: 80%;
@@ -29,4 +31,8 @@ body{
     text-align: center;
     min-width: auto;
     position: relative;
+}
+
+input{
+	width:150px;
 }
