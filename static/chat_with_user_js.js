@@ -18,6 +18,15 @@ $(document).ready(function(){
 			$(this).parent().addClass("your-margin");
 		}
 	});
+
+
+	//don't display empty message
+	$('.card-text').each(function(){
+		// alert($(this).text().length);
+			if ($(this).text().length == 0) {
+				$(this).parent().parent().hide();
+		}
+	})
 	
 });
 

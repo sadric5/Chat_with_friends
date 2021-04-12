@@ -2,6 +2,7 @@ body{
 	 background: #CCFAFE;
 }
 
+
 .container{
 	margin-bottom: 2%;
 }
@@ -40,3 +41,45 @@ textarea{
 	background-color: #3DC8FF;
 	/*width: 300px;*/
 }
+
+.send-button{
+	width: 100%!important;
+	/*height: 100%!important;*/
+	transform: translateY(61px);
+	border-left: none;
+	border-radius: 15px;
+
+}
+
+.send-button:hover{
+	border-color: none;
+}
+
+#id_my_messages{
+	scroll-behavior: none !important;
+	height: 100px;
+	outline: none;
+	resize: none;
+	background-color: #F3FDCD;
+	padding: 0px!important;
+	padding-left: 10px!important;
+	border: 5px solid #376702;
+	border-radius: 15px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
