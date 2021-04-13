@@ -30,4 +30,4 @@ $(document).ready(function(){
 	
 });
 
-	// document.querySelector('#id_my_messages').focus();
+	
