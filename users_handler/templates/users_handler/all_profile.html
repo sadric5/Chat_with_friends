@@ -1,21 +1,21 @@
 {% extends 'chat_app/base.html' %}
 
+
 {% block css_1%}
       <link rel="stylesheet" type="text/css" href="/static/all_profile.css">  
 {% endblock%}
-
-<!-- ================== profile ============================ -->
+<!-- ==================== All freinds ========================== -->
 {% block profile%}
-    <div class="row">
+<div class="row">
         {% for user in allUserAvailable%}
         <div class="col-sm-3 py-3 text-center">
-            <div class="card">
-                <div class="card-body">
-                    <a href="{% url 'chatUsers' user %}">
+            <a href="{% url 'chatUsers' user.pk %}">
+                <div class="card">
+                    <div class="card-body">
                         <h5 class="card-title">{{user.username}}</h5>
-                    </a>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
         {%endfor%}
     </div>
