@@ -1,11 +1,24 @@
-var username = JSON.parse(document.getElementById('room-name').textContent);
-	const chat_socket = new WebSocket(
-		'ws://'
-		+ window.location.host
-		+ '/ws/chat/'
-		+ document.querySelector('.chatuser').textContent.trim()
-		+ '/'
-		)
+// var username = JSON.parse(document.getElementById('room-name').textContent);
+// 	const chat_socket = new WebSocket(
+// 		'ws://'
+// 		+ window.location.host
+// 		+ '/ws/chat/'
+// 		+ document.querySelector('.chatuser').textContent.trim()
+// 		+ '/'
+// 		)
+
+	var protocl=window.location.protocol
+    var protocol_use = protocl=="https:"?"wss":"ws";
+    const chat_socket = new WebSocket(
+            protocol_use
+            + "://"
+            + window.location.host
+            + ":8989"
+            + '/wss/chat/'
+            + document.querySelector('.chatuser').textContent.trim()
+            + '/'
+            )
+
 	
 	message_section = $(".message-container");
 	p_element = document.createElement('div');
