@@ -12,34 +12,25 @@ body{
 	padding-bottom: 10px;
 }
 
-.chat-form{
-	/*width: =100%;*/
-}
-
-textarea{
-	/*width: =100%;*/
-}
-
 .message-card{
 	background-color: #F3FBD0;
 	border-radius: 15px;
+	max-width: 500px;
+	margin-bottom:75px!important;
 }
 
 .message-container{
-	/*width: 50%;*/
 
-	/*margin:auto 30% auto;*/
 }
 
 .my-margin{
-	margin-left: 200px!important;
 	background-color: #84A9FF;
-	/*width: 300px;*/
+	margin-right: 20px!important;
 }	
+
 .your-margin{
-	margin-right: 200px!important;
 	background-color: #3DC8FF;
-	/*width: 300px;*/
+	margin-left: 20px!important;
 }
 
 .send-button{

@@ -1,20 +1,12 @@
-
 var username = JSON.parse(document.getElementById('room-name').textContent);
-		
-var protocl=window.location.protocol
-var protocol_use = protocl=="https:"?"wss":"ws";
-
-const chat_socket = new WebSocket(
-		protocol_use
-		+ "://"
+	const chat_socket = new WebSocket(
+		'ws://'
 		+ window.location.host
-		+ ":8989"
-		+ '/wss/chat/'
-		+ username
+		+ '/ws/chat/'
+		+ document.querySelector('.chatuser').textContent.trim()
 		+ '/'
-	)
-
-
+		)
+	
 	message_section = $(".message-container");
 	p_element = document.createElement('div');
 	p_element.class = 'message-container';
@@ -33,7 +25,7 @@ const chat_socket = new WebSocket(
 					time = message_to_socket['time'];
 
 					function you(){
-						if($('.hidden').text().trim()==user){
+						if($('.user_hide').text().trim()==user){
 							return 'my-margin';
 						}else{
 							return 'your-margin';
@@ -43,8 +35,7 @@ const chat_socket = new WebSocket(
 					p_element.innerHTML +=
 
 					`
-					<h3>New Message</h3>
-					<div class= "card m-2 message-card ${you()}">
+					<div class= "card mt-2 mb-2 message-card ${you()} container-fluid">
 
 					 	<div class='card-header'>
 					 		${user} 
@@ -81,6 +72,5 @@ const chat_socket = new WebSocket(
 			'user':user,
 			'time': 'lol',
 		}));
-		// alert(message_send);
 		message_send.value = '';
 	};

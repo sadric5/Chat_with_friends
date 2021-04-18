@@ -6,7 +6,6 @@ import datetime
 
 
 
-
 class ChatConsumer(WebsocketConsumer):
 
 	#accept all incomming connection 
@@ -14,14 +13,13 @@ class ChatConsumer(WebsocketConsumer):
 		# get a chat room name
 		self.chat_name = self.scope['url_route']['kwargs']['chat_name']
 		#create a groupe name
-		self.username = self.scope['user']
+		self.username = self.scope['user'].pk
 		self.chatName = self.chat_name.rstrip('/')	#remove trailling slash
-		# self.chat_groupe_name = f'chat_{self.chatName}_{self.username}'
+		
 		if str(self.chatName)<str(self.username):
 			self.chat_groupe_name = f'chat_{self.chatName}_{self.username}'
 		else:
 			self.chat_groupe_name = f'chat_{self.username}_{self.chatName}'
-		print(self.chat_groupe_name)
 
 		# add all incoming connection with a goupe name to a groupe
 		async_to_sync(self.channel_layer.group_add)(
@@ -39,7 +37,7 @@ class ChatConsumer(WebsocketConsumer):
 		user = tex_data_json['user']
 		time = tex_data_json['time']
 
-		#store all data to a database
+		#Call the storing function to store all data to a database
 		self.create_chat_message(message, self.chat_groupe_name)
 		# send the message to the groupe
 		async_to_sync(self.channel_layer.group_send)(
@@ -67,13 +65,8 @@ class ChatConsumer(WebsocketConsumer):
 
 	def create_chat_message(self, message, chatGroupeName):
 		me = self.scope['user']
+		print(me)
 		return Message_In_box.objects.create(author =me, message=message, chat_room_message_name=chatGroupeName)
-
-
-
-
-
-
 
 
 	def disconnect(self, close_code):

@@ -1,8 +1,7 @@
 
 
-
 {% for item in all_message%}
-	<div class="card m-2 message-card">
+	<div class="card mb-2 mt-2 message-card container-fluid">
 		<div class="card-header"> {{item.author}} </div>
 		<div class="card-body">
 			<p class="card-text">{{item.message|linebreaksbr}}</p>
