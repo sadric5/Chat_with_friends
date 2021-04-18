@@ -45,6 +45,9 @@ body{
 .send-button:hover{
 	border-color: none;
 }
+.send-button{
+	outline: none;
+}
 
 #id_my_messages{
 	scroll-behavior: none !important;
