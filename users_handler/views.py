@@ -63,12 +63,12 @@ def user_login(request):
 					login(request, user)
 					return redirect('user-profile')
 				else:
-					c['user_password_dn_match'] = "Your password don't match! Try again."
+					c['user_password_dn_match'] = "Username or password don't match.\n Please provide the right crendential"
 					return render(request, 'login.html', c)
 		
 
 			else:
-				c['user_dn_exist'] = "Username don't exitst. \nPlease enter the right username!"
+				c['user_dn_exist'] = "Username or password don't match. \nPlease provide the right credential!"
 	return render(request, 'login.html', c)
 
 #===========================User layout view================================================
