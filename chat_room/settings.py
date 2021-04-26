@@ -41,7 +41,7 @@ ALLOWED_HOSTS = ['www.dricochat.com', 'dricochat.com']
 
 INSTALLED_APPS = [
     'channels',
-    'users_handler',
+    'users_handler.apps.UsersHandlerConfig',
     'chat_app.apps.ChatAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
