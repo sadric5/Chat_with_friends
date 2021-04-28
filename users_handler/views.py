@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import userForm, loginForm
+from .form import userForm, loginForm, UserUpdateForm, UserProfileUpdateForm
 from django.contrib.auth.models import User
 from django.contrib.auth import hashers as h
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
 from django.core.exceptions import ObjectDoesNotExist
-
+from django.contrib import messages
+from django.views.generic.list import ListView
 
 # Create your views here.
 def user_register(request):
