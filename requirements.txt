@@ -1,4 +1,4 @@
-asgiref==3.3.1
+asgiref==3.3.4
 attrs==20.3.0
 autobahn==21.3.1
 Automat==20.2.0
@@ -7,10 +7,14 @@ channels==3.0.3
 constantly==15.1.0
 cryptography==3.4.6
 daphne==3.0.1
-Django==3.1.7
+Django==3.2.4
+django-crispy-forms==1.11.2
 hyperlink==21.0.0
 idna==3.1
 incremental==21.3.0
+mysql==0.0.2
+mysqlclient==2.0.3
+Pillow==8.2.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
