@@ -1,1 +1,18 @@
-<h1>Hi </h1>
+{% extends 'chat_app/base.html' %}
+
+{% block content%}
+
+{% load crispy_forms_tags %}
+
+    <div class="container-sm sm col-6">
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token%}
+            {{form|crispy }}
+            <button type="submit" class='btn my-2 bg-secondary'>Log In</button>
+            <input type="hidden" name="next" value="{{next}}">
+        </form>
+    </div> 
+
+
+{% endblock%}
